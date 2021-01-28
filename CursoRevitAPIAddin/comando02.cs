@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
+using Autodesk.Revit.UI.Selection;
 
 namespace CursoRevitAPIAddin
 {
@@ -33,8 +34,8 @@ namespace CursoRevitAPIAddin
             colector.OfClass(typeof(Wall));
 
 
-            Form1 frmm = new Form1(doc);
-            frmm.ShowDialog();
+            //Form1 frmm = new Form1(doc);
+            //frmm.ShowDialog();
 
 
 
@@ -44,9 +45,10 @@ namespace CursoRevitAPIAddin
 
 
             //Seleccion actual de Elementos
+            Selection seleccion = uiDoc.Selection;
+            List<ElementId> ids = seleccion.GetElementIds().ToList();
 
-
-
+            TaskDialog.Show("Elementos seleccionados", "Hay " + ids.Count + " elementos seleccionados");
 
             //Seleccion durante la ejecucion
 

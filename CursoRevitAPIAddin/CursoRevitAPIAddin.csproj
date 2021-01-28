@@ -53,11 +53,19 @@
   <ItemGroup>
     <Compile Include="comando01.cs" />
     <Compile Include="comando02.cs" />
+    <Compile Include="comando03.cs" />
+    <Compile Include="comando04.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario03.Designer.cs">
+      <DependentUpon>formulario03.cs</DependentUpon>
     </Compile>
     <Compile Include="furmulario01.cs">
       <SubType>Form</SubType>
@@ -70,6 +78,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario03.resx">
+      <DependentUpon>formulario03.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="furmulario01.resx">
       <DependentUpon>furmulario01.cs</DependentUpon>
