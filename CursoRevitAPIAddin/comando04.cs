@@ -24,10 +24,17 @@ namespace CursoRevitAPIAddin
             //IList<Reference> reff = uiDoc.Selection.PickObjects(ObjectType.Element, "Seleccione elementos por favor");
 
             Element elemento = doc.GetElement(reff);
-            TaskDialog.Show("Elemento seleccionado", "El id del elemento seleccionado es "+ elemento.Id);
+            //TaskDialog.Show("Elemento seleccionado", "El id del elemento seleccionado es "+ elemento.Id);
 
+            /*
             Form1 frm = new Form1(doc);
+            frm.ShowDialog();*/
+
+            //Lanzar el formulario de parametros
+            formulario04Parametros frm = new formulario04Parametros(elemento);
             frm.ShowDialog();
+
+
 
             return Result.Succeeded;
         }

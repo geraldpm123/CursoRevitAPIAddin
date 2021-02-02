@@ -67,6 +67,12 @@
     <Compile Include="formulario03.Designer.cs">
       <DependentUpon>formulario03.cs</DependentUpon>
     </Compile>
+    <Compile Include="formulario04Parametros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario04Parametros.Designer.cs">
+      <DependentUpon>formulario04Parametros.cs</DependentUpon>
+    </Compile>
     <Compile Include="furmulario01.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formulario03.resx">
       <DependentUpon>formulario03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario04Parametros.resx">
+      <DependentUpon>formulario04Parametros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="furmulario01.resx">
       <DependentUpon>furmulario01.cs</DependentUpon>
