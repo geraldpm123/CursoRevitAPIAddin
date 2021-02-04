@@ -55,6 +55,8 @@
     <Compile Include="comando02.cs" />
     <Compile Include="comando03.cs" />
     <Compile Include="comando04.cs" />
+    <Compile Include="comando05.cs" />
+    <Compile Include="comando06.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +75,18 @@
     <Compile Include="formulario04Parametros.Designer.cs">
       <DependentUpon>formulario04Parametros.cs</DependentUpon>
     </Compile>
+    <Compile Include="formulario05ParametrosCompartidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario05ParametrosCompartidos.Designer.cs">
+      <DependentUpon>formulario05ParametrosCompartidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario06ModificacionesBasicas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario06ModificacionesBasicas.Designer.cs">
+      <DependentUpon>formulario06ModificacionesBasicas.cs</DependentUpon>
+    </Compile>
     <Compile Include="furmulario01.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +104,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formulario04Parametros.resx">
       <DependentUpon>formulario04Parametros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario05ParametrosCompartidos.resx">
+      <DependentUpon>formulario05ParametrosCompartidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario06ModificacionesBasicas.resx">
+      <DependentUpon>formulario06ModificacionesBasicas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="furmulario01.resx">
       <DependentUpon>furmulario01.cs</DependentUpon>

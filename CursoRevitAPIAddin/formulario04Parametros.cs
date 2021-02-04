@@ -91,7 +91,6 @@ namespace CursoRevitAPIAddin
             Transaction t = new Transaction(_doc, "Asignar el parametro comentarios");
             t.Start();
             paramComentarios.Set(txtComentarios.Text);
-
             t.Commit();
             MessageBox.Show("Se ha asignado el parametro");
         }
