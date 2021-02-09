@@ -19,18 +19,24 @@ namespace CursoRevitAPIAddin
             UIDocument uiDoc = uiApp.ActiveUIDocument;
             Document doc = uiDoc.Document;
 
-            //Obtener la referencia a seleccionar
-            Reference reff = uiDoc.Selection.PickObject(ObjectType.Element, "Seleccione un elemento por favor");
-            Reference reff2 = uiDoc.Selection.PickObject(ObjectType.Element, "Seleccione un modelLine");
-            Element elemento = doc.GetElement(reff);
-            Element linea = doc.GetElement(reff2);
+            try
+            {
+                //Obtener la referencia a seleccionar
+                Reference reff = uiDoc.Selection.PickObject(ObjectType.Element, "Seleccione un elemento por favor");
+                Reference reff2 = uiDoc.Selection.PickObject(ObjectType.Element, "Seleccione un modelLine");
+                Element elemento = doc.GetElement(reff);
+                Element linea = doc.GetElement(reff2);
+                //Llamar al formulario
+                formulario06ModificacionesBasicas frm = new formulario06ModificacionesBasicas(elemento, linea);
+                frm.ShowDialog();
+                return Result.Succeeded;
+            }
+            catch (Exception)
+            {
+                return Result.Cancelled;
+            }
 
-            //Llamar al formulario
-            formulario06ModificacionesBasicas frm = new formulario06ModificacionesBasicas(elemento,linea);
-            frm.ShowDialog();
-
-
-            return Result.Succeeded;
+            
         }
     }
 }

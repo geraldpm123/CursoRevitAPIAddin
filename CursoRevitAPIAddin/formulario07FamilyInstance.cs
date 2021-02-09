@@ -103,5 +103,50 @@ namespace CursoRevitAPIAddin
             _symSeleccionado = cmbTipos.SelectedItem as FamilySymbol;
             picImagenDeTipo.BackgroundImage = _symSeleccionado.GetPreviewImage(new Size(156, 156));
         }
+
+        private void btnColocarEjemplares_Click(object sender, EventArgs e)
+        {
+            Level nivelSeleccionado = cmbNiveles.SelectedItem as Level;
+            //Recuperar las coordenadas que el usuario ingreso
+            List<XYZ> listaPuntos = new List<XYZ>();
+            for (int i = 0; i < dgvCoordenadas.Rows.Count; i++)
+            {
+                try
+                {
+                    double x = Convert.ToDouble(dgvCoordenadas.Rows[i].Cells[0].Value.ToString());
+                    double y = Convert.ToDouble(dgvCoordenadas.Rows[i].Cells[1].Value.ToString());
+                    double z = Convert.ToDouble(dgvCoordenadas.Rows[i].Cells[2].Value.ToString());
+                    XYZ posicion = new XYZ(
+                    UnitUtils.ConvertToInternalUnits(x, DisplayUnitType.DUT_METERS),
+                    UnitUtils.ConvertToInternalUnits(y, DisplayUnitType.DUT_METERS),
+                    UnitUtils.ConvertToInternalUnits(z, DisplayUnitType.DUT_METERS));
+                    listaPuntos.Add(posicion);
+                }
+                catch (Exception eee)
+                {
+                    MessageBox.Show("No se han ingresado las posiciones correctamente" + "\n" + eee.Message);
+                    return;
+                } 
+            }
+
+            if (listaPuntos.Count!=0)
+            {
+                Transaction t = new Transaction(_doc, "Creacion de FamilyInstance");
+                t.Start();
+                foreach (XYZ xYZ in listaPuntos)
+                {
+                    _doc.Create.NewFamilyInstance(xYZ, _symSeleccionado, nivelSeleccionado, Autodesk.Revit.DB.Structure.StructuralType.NonStructural);
+
+                }
+                t.Commit();
+                MessageBox.Show("Se ha creado con exito los elementos en las posiciones indicadas", "Proceso exitoso");
+            }
+            else
+            {
+                MessageBox.Show("No se han ingresado valores de ubicacion para colocar los elementos", "Proceso fallido");
+            }
+
+
+        }
     }
 }
