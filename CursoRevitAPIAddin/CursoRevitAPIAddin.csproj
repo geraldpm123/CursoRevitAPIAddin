@@ -62,6 +62,7 @@
     <Compile Include="comando06.cs" />
     <Compile Include="comando07.cs" />
     <Compile Include="comando08.cs" />
+    <Compile Include="comando09.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +111,12 @@
     <Compile Include="formulario08CreacionMuros.Designer.cs">
       <DependentUpon>formulario08CreacionMuros.cs</DependentUpon>
     </Compile>
+    <Compile Include="formulario09CreacionFrames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario09CreacionFrames.Designer.cs">
+      <DependentUpon>formulario09CreacionFrames.cs</DependentUpon>
+    </Compile>
     <Compile Include="furmulario01.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formulario08CreacionMuros.resx">
       <DependentUpon>formulario08CreacionMuros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario09CreacionFrames.resx">
+      <DependentUpon>formulario09CreacionFrames.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="furmulario01.resx">
       <DependentUpon>furmulario01.cs</DependentUpon>
