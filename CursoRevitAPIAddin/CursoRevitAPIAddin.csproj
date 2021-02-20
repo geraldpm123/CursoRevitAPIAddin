@@ -31,6 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DynamoServices">
+      <HintPath>..\..\..\..\..\..\Program Files\Dynamo\Dynamo Core\1.3\DynamoServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="ProtoGeometry">
+      <HintPath>..\..\..\..\..\..\Program Files\Dynamo\Dynamo Core\1.3\ProtoGeometry.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="RevitAPI">
       <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2019\RevitAPI.dll</HintPath>
       <Private>False</Private>
@@ -38,6 +47,10 @@
     <Reference Include="RevitAPIUI">
       <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2019\RevitAPIUI.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitNodes">
+      <HintPath>..\..\..\..\..\..\Program Files\Dynamo\Dynamo Revit\1.3\Revit_2019\RevitNodes.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App.cs" />
     <Compile Include="comando01.cs" />
     <Compile Include="comando02.cs" />
     <Compile Include="comando03.cs" />
@@ -63,6 +77,9 @@
     <Compile Include="comando07.cs" />
     <Compile Include="comando08.cs" />
     <Compile Include="comando09.cs" />
+    <Compile Include="comando10.cs" />
+    <Compile Include="comando11.cs" />
+    <Compile Include="comando12.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +141,11 @@
       <DependentUpon>furmulario01.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
     <Compile Include="Tools.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +179,22 @@
     <EmbeddedResource Include="furmulario01.resx">
       <DependentUpon>furmulario01.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CursoRevitAPIAddin.addin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Resources\fire2.png" />
+    <Resource Include="Resources\files2.png" />
+    <Resource Include="Resources\Columna3x32.png" />
+    <None Include="Resources\Columna.tif" />
+    <Resource Include="Resources\cellx32.png" />
+    <Resource Include="Resources\fire.png" />
+    <Resource Include="Resources\molecule.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

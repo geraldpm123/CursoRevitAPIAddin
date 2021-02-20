@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>AddinCurso2021</Name>
+    <Assembly>Curso2021\CursoRevitAPIAddin.dll</Assembly>
+    <AddInId>f0f98c4b-cf58-432e-98ae-c59a59d110d9</AddInId>
+    <FullClassName>CursoRevitAPIAddin.App</FullClassName>
+    <VendorId>GPM</VendorId>
+    <VendorDescription>Mi primer Addin, www.objectg.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
