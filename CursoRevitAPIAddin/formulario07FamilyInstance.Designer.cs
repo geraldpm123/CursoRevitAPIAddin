@@ -32,10 +32,20 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvCoordenadas = new System.Windows.Forms.DataGridView();
+            this.x = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.y = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.z = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblFila = new System.Windows.Forms.Label();
             this.btnEliminarFila = new System.Windows.Forms.Button();
             this.btnAnadir = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolImportar = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnImportarCSV = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnImportarExcel = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolExportar = new System.Windows.Forms.ToolStripDropDownButton();
+            this.btnExportarCSV = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnExportarExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -47,14 +57,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.picImagenDeTipo = new System.Windows.Forms.PictureBox();
             this.btnColocarEjemplares = new System.Windows.Forms.Button();
-            this.x = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.y = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.z = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCoordenadas)).BeginInit();
             this.panel2.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -76,7 +84,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(560, 411);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(577, 440);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox1
@@ -85,7 +93,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(554, 210);
+            this.groupBox1.Size = new System.Drawing.Size(571, 239);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Coordenadas de Colocacion";
@@ -95,15 +103,16 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.dgvCoordenadas, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.panel2, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.dgvCoordenadas, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.panel2, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.toolStrip1, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 191F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(548, 191);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(565, 220);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // dgvCoordenadas
@@ -115,11 +124,28 @@
             this.y,
             this.z});
             this.dgvCoordenadas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCoordenadas.Location = new System.Drawing.Point(3, 3);
+            this.dgvCoordenadas.Location = new System.Drawing.Point(3, 33);
             this.dgvCoordenadas.Name = "dgvCoordenadas";
-            this.dgvCoordenadas.Size = new System.Drawing.Size(442, 185);
+            this.dgvCoordenadas.Size = new System.Drawing.Size(459, 184);
             this.dgvCoordenadas.TabIndex = 0;
             this.dgvCoordenadas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCoordenadas_CellClick);
+            // 
+            // x
+            // 
+            this.x.HeaderText = "X (m)";
+            this.x.Name = "x";
+            this.x.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // y
+            // 
+            this.y.HeaderText = "Y (m)";
+            this.y.Name = "y";
+            this.y.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // z
+            // 
+            this.z.HeaderText = "Z (m)";
+            this.z.Name = "z";
             // 
             // panel2
             // 
@@ -127,9 +153,9 @@
             this.panel2.Controls.Add(this.btnEliminarFila);
             this.panel2.Controls.Add(this.btnAnadir);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(451, 3);
+            this.panel2.Location = new System.Drawing.Point(468, 33);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(94, 185);
+            this.panel2.Size = new System.Drawing.Size(94, 184);
             this.panel2.TabIndex = 1;
             // 
             // lblFila
@@ -160,13 +186,78 @@
             this.btnAnadir.UseVisualStyleBackColor = true;
             this.btnAnadir.Click += new System.EventHandler(this.btnAnadir_Click);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolImportar,
+            this.toolExportar});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(465, 25);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolImportar
+            // 
+            this.toolImportar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnImportarCSV,
+            this.btnImportarExcel});
+            this.toolImportar.Image = global::CursoRevitAPIAddin.Resource1.icons8_import_32;
+            this.toolImportar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolImportar.Name = "toolImportar";
+            this.toolImportar.Size = new System.Drawing.Size(82, 22);
+            this.toolImportar.Text = "Importar";
+            // 
+            // btnImportarCSV
+            // 
+            this.btnImportarCSV.Image = global::CursoRevitAPIAddin.Resource1.icons8_csv_32;
+            this.btnImportarCSV.Name = "btnImportarCSV";
+            this.btnImportarCSV.Size = new System.Drawing.Size(180, 22);
+            this.btnImportarCSV.Text = "CSV";
+            this.btnImportarCSV.Click += new System.EventHandler(this.btnImportarCSV_Click);
+            // 
+            // btnImportarExcel
+            // 
+            this.btnImportarExcel.Image = global::CursoRevitAPIAddin.Resource1.icons8_microsoft_excel_32;
+            this.btnImportarExcel.Name = "btnImportarExcel";
+            this.btnImportarExcel.Size = new System.Drawing.Size(180, 22);
+            this.btnImportarExcel.Text = "Excel";
+            this.btnImportarExcel.Click += new System.EventHandler(this.btnImportarExcel_Click);
+            // 
+            // toolExportar
+            // 
+            this.toolExportar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnExportarCSV,
+            this.btnExportarExcel});
+            this.toolExportar.Image = global::CursoRevitAPIAddin.Resource1.icons8_export_32;
+            this.toolExportar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolExportar.Name = "toolExportar";
+            this.toolExportar.Size = new System.Drawing.Size(80, 22);
+            this.toolExportar.Text = "Exportar";
+            // 
+            // btnExportarCSV
+            // 
+            this.btnExportarCSV.Image = global::CursoRevitAPIAddin.Resource1.icons8_csv_32;
+            this.btnExportarCSV.Name = "btnExportarCSV";
+            this.btnExportarCSV.Size = new System.Drawing.Size(180, 22);
+            this.btnExportarCSV.Text = "CSV";
+            this.btnExportarCSV.Click += new System.EventHandler(this.btnExportarCSV_Click);
+            // 
+            // btnExportarExcel
+            // 
+            this.btnExportarExcel.Image = global::CursoRevitAPIAddin.Resource1.icons8_microsoft_excel_32;
+            this.btnExportarExcel.Name = "btnExportarExcel";
+            this.btnExportarExcel.Size = new System.Drawing.Size(180, 22);
+            this.btnExportarExcel.Text = "Excel";
+            this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tableLayoutPanel2);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 219);
+            this.groupBox2.Location = new System.Drawing.Point(3, 248);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(554, 144);
+            this.groupBox2.Size = new System.Drawing.Size(571, 144);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Seleccion de Tipo";
@@ -184,7 +275,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(548, 125);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(565, 125);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // panel1
@@ -198,7 +289,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(143, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(402, 119);
+            this.panel1.Size = new System.Drawing.Size(419, 119);
             this.panel1.TabIndex = 0;
             // 
             // cmbNiveles
@@ -210,7 +301,7 @@
             this.cmbNiveles.FormattingEnabled = true;
             this.cmbNiveles.Location = new System.Drawing.Point(70, 77);
             this.cmbNiveles.Name = "cmbNiveles";
-            this.cmbNiveles.Size = new System.Drawing.Size(329, 21);
+            this.cmbNiveles.Size = new System.Drawing.Size(346, 21);
             this.cmbNiveles.TabIndex = 5;
             // 
             // label3
@@ -233,7 +324,7 @@
             this.cmbTipos.FormattingEnabled = true;
             this.cmbTipos.Location = new System.Drawing.Point(70, 50);
             this.cmbTipos.Name = "cmbTipos";
-            this.cmbTipos.Size = new System.Drawing.Size(329, 21);
+            this.cmbTipos.Size = new System.Drawing.Size(346, 21);
             this.cmbTipos.TabIndex = 3;
             this.cmbTipos.SelectedIndexChanged += new System.EventHandler(this.cmbTipos_SelectedIndexChanged);
             // 
@@ -257,7 +348,7 @@
             this.cmbCategorias.FormattingEnabled = true;
             this.cmbCategorias.Location = new System.Drawing.Point(70, 23);
             this.cmbCategorias.Name = "cmbCategorias";
-            this.cmbCategorias.Size = new System.Drawing.Size(329, 21);
+            this.cmbCategorias.Size = new System.Drawing.Size(346, 21);
             this.cmbCategorias.TabIndex = 1;
             this.cmbCategorias.SelectedIndexChanged += new System.EventHandler(this.cmbCategorias_SelectedIndexChanged);
             // 
@@ -286,36 +377,19 @@
             // 
             this.btnColocarEjemplares.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnColocarEjemplares.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnColocarEjemplares.Location = new System.Drawing.Point(3, 369);
+            this.btnColocarEjemplares.Location = new System.Drawing.Point(3, 398);
             this.btnColocarEjemplares.Name = "btnColocarEjemplares";
-            this.btnColocarEjemplares.Size = new System.Drawing.Size(554, 39);
+            this.btnColocarEjemplares.Size = new System.Drawing.Size(571, 39);
             this.btnColocarEjemplares.TabIndex = 2;
             this.btnColocarEjemplares.Text = "Colocar Ejemplares";
             this.btnColocarEjemplares.UseVisualStyleBackColor = true;
             this.btnColocarEjemplares.Click += new System.EventHandler(this.btnColocarEjemplares_Click);
             // 
-            // x
-            // 
-            this.x.HeaderText = "X (m)";
-            this.x.Name = "x";
-            this.x.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // y
-            // 
-            this.y.HeaderText = "Y (m)";
-            this.y.Name = "y";
-            this.y.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // z
-            // 
-            this.z.HeaderText = "Z (m)";
-            this.z.Name = "z";
-            // 
             // formulario07FamilyInstance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 411);
+            this.ClientSize = new System.Drawing.Size(577, 440);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "formulario07FamilyInstance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -323,9 +397,12 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCoordenadas)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -359,5 +436,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn x;
         private System.Windows.Forms.DataGridViewTextBoxColumn y;
         private System.Windows.Forms.DataGridViewTextBoxColumn z;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripDropDownButton toolImportar;
+        private System.Windows.Forms.ToolStripMenuItem btnImportarCSV;
+        private System.Windows.Forms.ToolStripMenuItem btnImportarExcel;
+        private System.Windows.Forms.ToolStripDropDownButton toolExportar;
+        private System.Windows.Forms.ToolStripMenuItem btnExportarCSV;
+        private System.Windows.Forms.ToolStripMenuItem btnExportarExcel;
     }
 }
